@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,700,400' rel='stylesheet' type='text/css'>
+
+  <meta charset="UTF-8"/>
+  <meta name = "description"  content = "CMPSC 457 Lab #1 Writeup" />
+  <meta name = "keywords"     content = "Matthew, Panetta, Lab, CMPSC457, OpenGL, house, 2D"/>
+  <meta name = "robots"       content = "index,follow"/>
+
+  <base href = "http://65.185.85.1/"/>
+
+  <link rel = "stylesheet" href = "styles.css"/>
+
+  <title>CMPSC 457 Lab #2 Writeup</title>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <header>
+      <h1>CMPSC 457 Lab #2</h1>
+      <h2>By: Matthew Panetta</h2>
+    </header>
+
+    <main id="content">
+      <div id="labInfo">
+        <h3>Instructions</h3>
+        <img id="face" alt="OpenGL 2D drawing of a face" src="face.png">
+        <div id="directions">
+          In this lab I needed to:
+          <ul id="objectives">
+            <li>Draw a white face in the center of the screen</li>
+            <li>Move the face around the screen with velocity variables</li>
+            <li>Have the face bounce off screen boundaries</li>
+            <li>Inverse the face's velocity after it has bounced off a boundary</li>
+            <li>Change the face's color after collision with boundary</li>
+            <li>Have the program terminate when 'q' is pressed, or when the RMB is clicked.</li>
+            <li>Maintain the face's size and shape regardless of screen size</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="implement-wrapper">
+
+
+        <h3>My Implementation</h3>
+
+        <div id="implementations">
+          <ul id="info">
+            <li>I calculated the circle (for the head) by using a GL_POLYGON and splitting the circle into 30 different line segments.</li>
+            <li>The eyes also use the circle function as described above, while the mouth was made by a different GL_POLYGON (trapezoidal)</li>
+            <li>The face has an initial xVelocity of 0.02 and initial yVelocity of 0.03.</li>
+            <li>The face is drawn to screen, its position variables update, the face is cleared from the screen, and then redrawn.</li>
+            <li>Movement is simulated by adding xVelocity to the face's xPosition (likewise with the y) everytime the face is drawn.</li>
+            <li>The position variables are checked every draw to see if the face is about to go off the screen.</li>
+            <li>If the face's position is past the screen boundary, the cooresponding velocity is inverted.</li>
+            <li>The face changes color using three random numbers.</li>
+          </ul>
+        </div>
+
+      <div id="code">
+        <h3>Source Code</h3>
+        <p id="sourceCode">
+          The source code is available on:
+          <a href="https://github.com/mp755/CMPSC457_Lab1">Github</a>
+          <br>Or, here is the
+          <a href="https://github.com/mp755/CMPSC457_Lab1/blob/master/Lab1/Hello.cpp">
+            Hello.cpp</a> file on GitHub.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+
+  </html>
